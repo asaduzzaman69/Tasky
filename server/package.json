@@ -1,0 +1,24 @@
+{
+   "name": "tasky",
+   "version": "1.0.0",
+   "description": "A Task Management Web Application",
+   "main": "server.js",
+   "scripts": {
+      "start": "nodemon server.js"
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/asaduzzaman69/Tasky.git"
+   },
+   "author": "",
+   "license": "ISC",
+   "bugs": {
+      "url": "https://github.com/asaduzzaman69/Tasky/issues"
+   },
+   "homepage": "https://github.com/asaduzzaman69/Tasky#readme",
+   "dependencies": {
+      "dotenv": "^10.0.0",
+      "express": "^4.17.1",
+      "mongoose": "^6.0.2"
+   }
+}
