@@ -1,12 +1,14 @@
+//internal imports
+const AppError = require('../../../natours/util/AppError');
+
 function notFoundHandler(req, res, next) {
-   res.status(404).json({ error: 'Your requested URL was not found' });
+   next(new AppError(`Can't find ${req.originalUrl}`, 404));
 }
 
-function globalErrorHandler() {
-   if (res.headerSent) {
-      return next(error);
-   }
-   res.status(500).json({ error });
+function globalErrorHandler(error, req, res, next) {
+   error.statusCode = error.statusCode || 500;
+   error.status = error.status || 'error';
+   res.status(error.statusCode).json({ status: error.status, message: error.message });
 }
 
 module.exports = { notFoundHandler, globalErrorHandler };

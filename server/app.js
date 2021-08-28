@@ -18,8 +18,8 @@ app.use(express.json());
 //routers
 app.use('/user', userRouter);
 
-//eror handlers
-app.use(notFoundHandler);
+//error handlers
+app.all('*', notFoundHandler);
 app.use(globalErrorHandler);
 
 //export the app
